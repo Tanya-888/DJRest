@@ -17,10 +17,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse
+from django.shortcuts import render
+
+# Создайте view для главной
+def index(request):
+    return render(request, 'index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('core.urls')),
-    path('', lambda request: HttpResponse('Добро пожаловать в API Здоровья!')),  # главная страница
+    path('', index),  # главная страница
 ]
