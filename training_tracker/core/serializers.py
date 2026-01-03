@@ -42,4 +42,4 @@ class ExerciseResultSerializer(serializers.ModelSerializer):
 class ReminderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reminder
-        fields = '__all__'
+        fields = '__all__
